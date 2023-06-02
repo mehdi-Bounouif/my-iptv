@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<!-- pricing table -->
+
+<!-- ====== Pricing Section Start -->
+<div style="margin: 50px 0 100px 0;" class="pricecontainer">
+  <div class="container p-5 fadeInUp">
+    <div style="padding: 50px 0;" class="text-center wow fadeInUp px-5" data-wow-delay="0.1s">
+      <h6 class="text-primary text-uppercase">// Plans //</h6>
+  <h1 class="mb-5">Subscription plans </h1>
+  <p>As you know we are the First iptv service provider on internet, and we have the best iptv server with more than 10 Gbps connection,
+    speed and unlimited bandwidth, we also, provide no freezing technology with 99% uptime.</p>
+  </div>
+</div>
+
+  
+  <div id="price" class="price-table ">
+    {% for price in prices %}
+    <div class="price-card wow fadeInUp">
+      <h3 class="price-card-header">{{price.my_name}}</h3>
+      <div class="price"><sup>$</sup>{{price.my_price}}<span>/{{price.month}} Month</span></div>
+      <ul>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span>{{price.Fitur_1}} </span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span> {{price.Fitur_2}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span> {{price.Fitur_3}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span> {{price.Fitur_4}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_5}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_6}}</span> </li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_7}}</span> </li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_8}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_9}}</span> </li>
+      </ul>
+      <button class="btn-pill order-btn">
+        <a href="{% url 'payment' %}" class="btn">Order Now</a>
+      </button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- ====== Pricing Section End -->
+
+<!-- pricing table -->
+  
+{% endblock content %}
+  

@@ -1,0 +1,212 @@
+
+{% extends 'paymentbase.html' %}
+
+{% load static %}
+{% block content %}
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,400&display=swap');
+
+  *{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+.mainContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 60px;
+  min-height: 100vh;
+  padding: 40px;
+  background-image: linear-gradient(to right top, #8685ef, #9793f1, #a8a2f4, #b7b1f6, #c6c0f8);
+}
+.form-container{
+  background-color: #fff;
+  width: 700px;
+  max-width: 700px;
+  padding: 25px 25px 10px 25px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+  border-radius: 7px;
+}
+.form-container .form-title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.form-container form{
+  padding: 30px 0 0 100px;
+}
+.form-container form .form-row{
+  display: flex;
+  margin: 50px 0;
+}
+.form-container form .form-row .input-data{
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .fomr-row .textarea{
+  height: 70px;
+}
+.input-data input,
+.textarea textarea{
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, .12);
+}
+.textarea textarea{
+  resize: none;
+  padding-top: 10px;
+}
+.form-select:focus ~ label,
+.form-control:focus ~ label{
+  transform: translateY(-20px) !important;
+  color: #3498db !important;
+  font-size: 14px !important;
+}
+label{
+  position: absolute!;
+  bottom: 10px;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all .3s ease;
+}
+.textarea label{
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+}
+.input-data .underline{
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  /* background-color:? red; */
+}
+.input-data .underline:before,
+.input-data .underline:after{
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: #3498db;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .3s ease;
+
+}
+.input-data input:focus ~ .underline:before, .underline:after,
+.textarea textarea:focus ~ .underline:before, .underline:after,
+.input-data input:valid ~ .underline:before, .underline:after,
+.textarea textarea:valid ~ .underline:before, .underline:after{
+  transform: scaleX(1);
+}
+.submit-btn .input-data{
+  height: 45px!important;
+  width: 25%!important;
+  overflow: hidden;
+}
+.submit-btn .input-data .inner{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: linear-gradient(115deg, #56d8e4 10px, #9f01ea 90%);
+  transition: all .3s;
+}
+.submit-btn .input-data:hover .inner{
+  left: 0;
+}
+.submit-btn .input-data input{
+  position: relative;
+  z-index: 2;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
+.form-control,
+.form-select{
+  width: 80% !important;
+  outline: none !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(0, 0, 0, .12) !important;
+  margin-bottom: 30px;
+}
+@media (max-width: 650px) {
+  .mainContainer{
+    padding: 15px;
+  }
+  .form-container{
+    background-color: #fff;
+    width: 100%;
+    max-width: 100%;
+  }
+  .form-container form{
+    padding: 0px 0 0 0px;
+  }
+  .submit-btn .input-data{
+    width: 40% !important;
+  }
+  .form-control,
+  .form-select{
+    width: 95% !important;
+  }
+}
+</style>
+<body>
+  <div class="mainContainer">
+    {% for msg in messages %}
+    <div style="border-radius: 7px;" class="alert alert-light" role="alert">
+      <img style="display: block; margin: auto;" src="{% static 'img/PayPal-Logo.png' %}" alt="">
+      {{msg}}
+      <hr>
+      <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+    </div>
+    {% endfor %}
+    <div class="form-container">
+      <div class="form-title">
+        Customer information
+      </div>
+      <form method="post" action="#">
+        {% csrf_token %}
+        {{form}}
+        <div class="form-row submit-btn">
+          <div class="input-data">
+            <div class="inner"></div>
+            <input type="submit" value="submit">
+          </div>
+        </div>
+          
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,377 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div style="position: relative;" class="maincont">
+
+  
+</div>
+
+
+<!-- Carousel End -->
+<div class=" mainTextContainer container-fluid p-5">
+  <div style="padding: 50px 0;" class="wow fadeInUp px-5 main-text" data-wow-delay="0.1s">
+    <!-- <h6 class="text-primary text-uppercase">// Upgrade Your Viewing //</h6> -->
+    <h1 class="mb-5">Enjoy Your IPTV Now, No Contract, No Cancallation Fees !!</h1>
+    <p style="font-size: 20px;">Try Ower 24h Triel For Free To Whether Our IPTV Is Right For You</p>
+    <button class="btn-pill">
+      <a href="{% url 'subscription' %}" class="btn">Get Your Free Triel</a>
+    </button>
+  </div>
+</div>
+
+
+
+<!-- pricing table -->
+
+<!-- ====== Pricing Section Start -->
+<div class="pricecontainer">
+  <div class="container p-5 fadeInUp">
+    <div style="padding: 50px 0;" class="text-center wow fadeInUp px-5" data-wow-delay="0.1s">
+      <h6 class="text-primary text-uppercase">// Plans //</h6>
+  <h1 class="mb-5">Subscription plans </h1>
+  <p>As you know we are the First iptv service provider on internet, and we have the best iptv server with more than 10 Gbps connection,
+    speed and unlimited bandwidth, we also, provide no freezing technology with 99% uptime.</p>
+  </div>
+</div>
+
+  
+  <div id="price" class="price-table ">
+    {% for price in prices %}
+    <div class="price-card wow fadeInUp">
+      <h3 class="price-card-header">{{price.my_name}}</h3>
+      <div class="price"><sup>$</sup>{{price.my_price}}<span>/{{price.month}} Month</span></div>
+      <ul>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span>{{price.Fitur_1}} </span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span> {{price.Fitur_2}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span> {{price.Fitur_3}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i> <span> {{price.Fitur_4}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_5}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_6}}</span> </li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_7}}</span> </li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_8}}</span></li>
+        <li><i class="fa fa-check" aria-hidden="true"></i><span>{{price.Fitur_9}}</span> </li>
+      </ul>
+      <button class="btn-pill order-btn">
+        <a href="{% url 'payment' %}" class="btn">Order Now</a>
+      </button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- ====== Pricing Section End -->
+
+<!-- pricing table -->
+
+
+
+
+
+<!-- Fact Start -->
+<div style="position: relative; padding: 200px 0;" class="container-fluid fact my-5 py-5 fadeInUp">
+
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+        <div class="hi">
+          <strong>%</strong>
+          <h1 class="text-white mb-2" data-toggle="counter-up">99</h1>
+        </div>
+        <p class="text-white mb-0">uptime guarantee</p>
+      </div>
+      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+        <div class="hi">
+          <strong>GB</strong>
+          <h1 class="text-white mb-2" data-toggle="counter-up">25</h1>
+        </div>
+        <p class="text-white mb-0">bandwidth capacity</p>
+      </div>
+      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+        <h1 class="text-white mb-2" data-toggle="counter-up">8</h1>
+        <p class="text-white mb-0">years of experience</p>
+      </div>
+      <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+        <div class="hi">
+          <strong>+</strong>
+          <h1 class="text-white mb-2" data-toggle="counter-up">79</h1>
+        </div>
+        <p class="text-white mb-0">point of presence</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- Fact End -->
+
+
+
+<!-- FAQ -->
+
+<div id="faq" class="FAQcontainee py-5">
+  <div class="container wow fadeInUp">
+    <div style="padding: 50px 0;" class="text-center wow fadeInUp px-5" data-wow-delay="0.1s">
+      <h6 class="text-primary text-uppercase">// FAQ //</h6>
+    <h1>Frequently Asked Questions</h1>
+  </div>
+</div>
+  <div class='faq wow fadeInUp mb-5 px-5'>
+    <input id='faq-a' type='checkbox'>
+    <label for='faq-a'>
+      <p class="faq-heading">Instant Install </p>
+      <div class='faq-arrow'></div>
+        <p class="faq-text">You can easily setup and install your iptv subscription on your favorite device, we provide full tutorials on our website to make this process easier for everyone.</p>
+    </label>
+    <input id='faq-b' type='checkbox'>
+    <label for='faq-b'>
+      <p class="faq-heading">Full HD Quality</p>
+      <div class='faq-arrow'></div>
+        <p class="faq-text">We offer a long list of channels, movies, and tv shows with HD, FHD, and 4k quality.</p>
+    </label>
+    <input id='faq-c' type='checkbox'>
+    <label for='faq-c'>
+      <p class="faq-heading">75,000+ Live Tv and Vods</p>
+      <div class='faq-arrow'></div>
+        <p class="faq-text">A complete list of all available European channels. With over 75,000 TV and VOD channels, we can offer you the most advanced channel list on the market.</p>
+    </label>
+    <input id='faq-d' type='checkbox'>
+    <label for='faq-d'>
+      <p class="faq-heading">High Quality and Speed</p>
+      <div class='faq-arrow'></div>
+        <p class="faq-text">Unlike other IPTV providers, CheckedTVuses a high-quality European dedicated server with a 10 Gbps connection. Opening our TV channels will take less than 0.5 seconds.</p>
+    </label>
+    <input id='faq-e' type='checkbox'>
+    <label for='faq-e'>
+      <p class="faq-heading">All Devices Supported</p>
+      <div class='faq-arrow'></div>
+        <p class="faq-text">The best feature of having an IPTV server is to be able to watch your favorite TV channels on all devices such as Smart TV, Smartphone, Tablet, Computer, Android Box, etc.</p>
+    </label>
+      <input id='settings' type='checkbox'>
+    <input id='faq-f' type='checkbox'>
+    <label for='faq-f'>
+      <p class="faq-heading">Money Saver</p>
+      <div class='faq-arrow'></div>
+        <p class="faq-text">No need to pay for multiple streaming platform subscriptions and cable services! You get everything with a fraction of the price with CheckedipTV.</p>
+    </label>
+  </div>
+</div>
+
+
+
+<!-- FAQ -->
+
+
+
+
+
+<!-- Testimonial Start -->
+<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="text-center">
+      <h6 class="text-primary text-uppercase">// Testimonial //</h6>
+      <h1 class="mb-5">Our Clients Say!</h1>
+    </div>
+    <div class="owl-carousel testimonial-carousel position-relative">
+      <div class="testimonial-item text-center">
+        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-1.jpg'%}"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Client Name</h5>
+        <p>Profession</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
+            ipsum et lorem et sit.</p>
+        </div>
+      </div>
+      <div class="testimonial-item text-center">
+        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-2.jpg'%}"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Client Name</h5>
+        <p>Profession</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
+            ipsum et lorem et sit.</p>
+        </div>
+      </div>
+      <div class="testimonial-item text-center">
+        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-3.jpg'%}"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Client Name</h5>
+        <p>Profession</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
+            ipsum et lorem et sit.</p>
+        </div>
+      </div>
+      <div class="testimonial-item text-center">
+        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-4.jpg'%}"
+          style="width: 80px; height: 80px;">
+        <h5 class="mb-0">Client Name</h5>
+        <p>Profession</p>
+        <div class="testimonial-text bg-light text-center p-4">
+          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
+            ipsum et lorem et sit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="main-testi text-center container-fluid ">
+  <h1 class="text-light">Don't Just Take OurWord for It - Hear From  Our<br> Happy Customers! </h1>
+  <p class="text-light">Here are some testimonials from our satisfied customers who have experienceseamless <br> streaming with our IPTV service.</p>
+  <div class='testimonials'>
+    <div class="testimonial-container">
+      <!-- TESTIMONIAL ITEM-1-->
+      <div class="testimonial">
+        <!-- PROFILE INFO -->
+        <div class="profile-info">
+          <img src="https://6476867bca65513195636a27--gorgeous-dolphin-b58832.netlify.app/images/image-daniel.jpg" alt="danial pfp" />
+          <div class="profile-text">
+            <h2 class="name">Daniel Clifford</h2>
+            <p>Verified Graduate</p>
+          </div>
+        </div>
+    
+        <!-- TESTIMONIAL -->
+        <div class="testimonial-text">
+          <h3>
+            I received a job offer mid-course, and the subjects I learned were
+            current, if not more so, in the company I joined. I honestly feel I
+            got every penny’s worth.
+          </h3>
+    
+          <p>
+            “ I was an EMT for many years before I joined the bootcamp. I’ve
+            been looking to make a transition and have heard some people who had
+            an amazing experience here. I signed up for the free intro course
+            and found it incredibly fun! I enrolled shortly thereafter. The next
+            12 weeks was the best - and most grueling - time of my life. Since
+            completing the course, I’ve successfully switched careers, working
+            as a Software Engineer at a VR startup. ”
+          </p>
+        </div>
+      </div>
+    
+      <!-- TESTIMONIAL ITEM-2-->
+      <div class="testimonial">
+        <!-- PROFILE INFO -->
+        <div class="profile-info">
+          <img src="https://6476867bca65513195636a27--gorgeous-dolphin-b58832.netlify.app/images/image-jonathan.jpg" alt="jonathan pfp" />
+          <div class="profile-text">
+            <h2 class="name">Jonathan Walters</h2>
+            <p>Verified Graduate</p>
+          </div>
+        </div>
+    
+        <!-- TESTIMONIAL -->
+        <div class="testimonial-text">
+          <h3>The team was very supportive and kept me motivated</h3>
+          <p>
+            “ I started as a total newbie with virtually no coding skills. I now
+            work as a mobile engineer for a big company. This was one of the
+            best investments I’ve made in myself. ”
+          </p>
+        </div>
+      </div>
+    
+      <!-- TESTIMONIAL ITEM-3-->
+      <div class="testimonial">
+        <!-- PROFILE INFO -->
+        <div class="profile-info">
+          <img src="https://6476867bca65513195636a27--gorgeous-dolphin-b58832.netlify.app/images/image-jeanette.jpg" alt="jeanette pfp" />
+          <div class="profile-text">
+            <h2 class="name">Jeanette Harmon</h2>
+            <p>Verified Graduate</p>
+          </div>
+        </div>
+    
+        <!-- TESTIMONIAL -->
+        <div class="testimonial-text">
+          <h3>An overall wonderful and rewarding experience</h3>
+          <p>
+            “ Thank you for the wonderful experience! I now have a job I really
+            enjoy, and make a good living while doing something I love. ”
+          </p>
+        </div>
+      </div>
+    
+      <!-- TESTIMONIAL ITEM-4-->
+      <div class="testimonial">
+        <!-- PROFILE INFO -->
+        <div class="profile-info">
+          <img src="https://6476867bca65513195636a27--gorgeous-dolphin-b58832.netlify.app/images/image-patrick.jpg" alt="patrick pfp" />
+          <div class="profile-text">
+            <h2 class="name">Patrick Abrams</h2>
+            <p>Verified Graduate</p>
+          </div>
+        </div>
+    
+        <!-- TESTIMONIAL -->
+        <div class="testimonial-text">
+          <h3>
+            Awesome teaching support from TAs who did the bootcamp themselves.
+            Getting guidance from them and learning from their experiences was
+            easy.
+          </h3>
+    
+          <p>
+            “ The staff seem genuinely concerned about my progress which I find
+            really refreshing. The program gave me the confidence necessary to
+            be able to go out in the world and present myself as a capable
+            junior developer. The standard is above the rest. You will get the
+            personal attention you need from an incredible community of smart
+            and amazing people. ”
+          </p>
+        </div>
+      </div>
+    
+      <!-- TESTIMONIAL ITEM-5-->
+      <div class="testimonial">
+        <!-- PROFILE INFO -->
+        <div class="profile-info">
+          <img src="https://6476867bca65513195636a27--gorgeous-dolphin-b58832.netlify.app/images/image-kira.jpg" alt="danial pfp" />
+          <div class="profile-text">
+            <h2 class="name">Kira Whittle</h2>
+            <p>Verified Graduate</p>
+          </div>
+        </div>
+    
+        <!-- TESTIMONIAL -->
+        <div class="testimonial-text">
+          <h3>Such a life-changing experience. Highly recommended!</h3>
+    
+          <p>
+            “ Before joining the bootcamp, I’ve never written a line of code. I
+            needed some structure from professionals who can help me learn
+            programming step by step. I was encouraged to enroll by a former
+            student of theirs who can only say wonderful things about the
+            program. The entire curriculum and staff did not disappoint. They
+            were very hands-on and I never had to wait long for assistance. The
+            agile team project, in particular, was outstanding. It took my
+            learning to the next level in a way that no tutorial could ever
+            have. In fact, I’ve often referred to it during interviews as an
+            example of my developent experience. It certainly helped me land a
+            job as a full-stack developer after receiving multiple offers. 100%
+            recommend! ”
+          </p>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+  <button class="btn-pill align-items-center mx-auto">
+    <a href="{% url 'subscription' %}" class="btn">Get Your Free Triel</a>
+  </button>
+  <small>30-day money-back guarantee</small>
+</div>
+<!-- Testimonial End -->
+
+
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+{% endblock content %}
