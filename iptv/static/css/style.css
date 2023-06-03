@@ -14,7 +14,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  font-family: nexa, sans-serif;
+  font-family: nexa, sans-serif !important;
   outline: none;
 }
 
@@ -203,8 +203,10 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: var(--dark);
-  font-weight: 500;
+    color: var(--dark);
+    font-size: 17px;
+    font-size: bold;
+    font-weight: bold;
 }
 
 .navbar-light.sticky-top {
@@ -247,15 +249,20 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  text-align: center;
 }
 
+.maincont .btn-pill,
 .main-testi .btn-pill,
 .mainTextContainer .btn-pill {
   border: 2px solid white;
   border-radius: 10px;
   color: white !important;
 }
-
+.main-testi .btn-pill{
+  margin-top: 40px;
+}
+.maincont .btn-pill a,
 .main-testi .btn-pill a,
 .mainTextContainer .btn-pill a {
   color: white !important;
@@ -569,16 +576,36 @@
 /* start header */
 
 .maincont {
-  /* width: 100vw; */
+  position: relative;
   height: 85vh;
   background-image: url(../img/mainback.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Nexa, sans-serif;
   position: relative;
-
+  padding-top: 15em !important;
   --white: #ebebeb;
   --pink: #d6157c;
+}
+.maincont .blur{
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.maincont h1{
+  font-size: 4em !important;
+  line-height: 92px !important;
+}
+
+.maincont .bottuns{
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
 }
 
 .cont {
@@ -787,12 +814,12 @@
 
   .btn-pill {
     height: 40px;
-    width: 110px;
+    min-width: 110px;
     font-size: 18px;
   }
 
   .btn-pill a {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .layer {
@@ -924,7 +951,7 @@
 }
 
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1370px) {
   .price-card {
     flex: 50%;
     /* padding: 0 !important; */

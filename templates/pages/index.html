@@ -5,7 +5,21 @@
 {% block content %}
 
 <div style="position: relative;" class="maincont">
+  <div class="blur"></div>
 
+  <div style="position: relative; z-index: 2;" class="container">
+    <h1 class="text-light text-uppercase">Your Gateway to <br>
+      Endless Entertainment!</h1>
+
+      <div class="bottuns">
+        <button class="btn-pill">
+          <a href="{% url 'subscription' %}" class="btn">Free Triel</a>
+        </button>
+        <button class="btn-pill">
+          <a href="{% url 'subscription' %}" class="btn">Get My IPTV Access</a>
+        </button>
+      </div>
+  </div>
   
 </div>
 
@@ -13,7 +27,6 @@
 <!-- Carousel End -->
 <div class=" mainTextContainer container-fluid p-5">
   <div style="padding: 50px 0;" class="wow fadeInUp px-5 main-text" data-wow-delay="0.1s">
-    <!-- <h6 class="text-primary text-uppercase">// Upgrade Your Viewing //</h6> -->
     <h1 class="mb-5">Enjoy Your IPTV Now, No Contract, No Cancallation Fees !!</h1>
     <p style="font-size: 20px;">Try Ower 24h Triel For Free To Whether Our IPTV Is Right For You</p>
     <button class="btn-pill">
@@ -157,67 +170,10 @@
   </div>
 </div>
 
-
-
 <!-- FAQ -->
 
 
-
-
-
-<!-- Testimonial Start -->
-<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-  <div class="container">
-    <div class="text-center">
-      <h6 class="text-primary text-uppercase">// Testimonial //</h6>
-      <h1 class="mb-5">Our Clients Say!</h1>
-    </div>
-    <div class="owl-carousel testimonial-carousel position-relative">
-      <div class="testimonial-item text-center">
-        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-1.jpg'%}"
-          style="width: 80px; height: 80px;">
-        <h5 class="mb-0">Client Name</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
-            ipsum et lorem et sit.</p>
-        </div>
-      </div>
-      <div class="testimonial-item text-center">
-        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-2.jpg'%}"
-          style="width: 80px; height: 80px;">
-        <h5 class="mb-0">Client Name</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
-            ipsum et lorem et sit.</p>
-        </div>
-      </div>
-      <div class="testimonial-item text-center">
-        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-3.jpg'%}"
-          style="width: 80px; height: 80px;">
-        <h5 class="mb-0">Client Name</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
-            ipsum et lorem et sit.</p>
-        </div>
-      </div>
-      <div class="testimonial-item text-center">
-        <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-4.jpg'%}"
-          style="width: 80px; height: 80px;">
-        <h5 class="mb-0">Client Name</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat
-            ipsum et lorem et sit.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
+<!-- testimonials -->
 <div class="main-testi text-center container-fluid ">
   <h1 class="text-light">Don't Just Take OurWord for It - Hear From  Our<br> Happy Customers! </h1>
   <p class="text-light">Here are some testimonials from our satisfied customers who have experienceseamless <br> streaming with our IPTV service.</p>
